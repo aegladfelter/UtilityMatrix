@@ -1,11 +1,3 @@
-#define _CRTDBG_MAP_ALLOC
-#include<iostream>
-#include <crtdbg.h>
-#ifdef _DEBUG
-#define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
-#define new DEBUG_NEW
-#endif
-
 #ifndef _MATRIX_GUARD
 #define _MATRIX_GUARD 1
 
@@ -110,9 +102,7 @@ public:
     //
     inline void set(unsigned r, unsigned c, const T& val)
     {
-        //std::cout << "M[" << r << "][" << c << "] = M[" << r * _columns + c << "] = " << val << std::endl;
         _matrix[r * _columns + c] = val;
-        //std::cout << "M[" << r << "][" << c << "] = M[" << r * _columns + c << "] = " << _matrix[r * _columns + c] << std::endl;
     }
 
     //
